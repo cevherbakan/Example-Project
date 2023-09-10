@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app" class="container">
+        <h4 class="d-flex justify-content-center">
+            Dexon Example Project
+        </h4>
+
+        <router-view></router-view>
+        <h2>Thickness Table</h2>
+        <h3>TestPoint Number: {{tp_number}}</h3>
+        <button type="button" class="btn btn-primary m-2 float-end" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" @click="addClick()">
+            Add Thickness
+        </button>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>TpId</th>
+                    <th>Tp Number</th>
+                    <th>InspectionDate</th>
+                    <th>ActualThickness</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="thickness in thicknesses">
+                    <td>{{ thickness.thicknesses.id }}</td>
+                    <td>{{ thickness.thicknesses.tpId }}</td>
+                    <td>{{ tp_number }}</td>
+                    <td>{{ thickness.thicknesses.inspectionDate}}</td>
+                    <td>{{ thickness.thicknesses.actualThickness}}</td>
+                    <td>
+                        <button type="button" class="btn btn-light mr-1" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" @click="editClick(thickness.thicknesses)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                <path fill-rule="evenodd"
+                                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                            </svg>
+                        </button>
+                        <button type="button" @click="deleteClick(thickness.thicknesses.id)" class="btn btn-light mr-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                            </svg>
+                        </button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{ modalTitle }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="d-flex flex-row bd-highlight mb-3">
+                            <div class="p-2 w-50 bd-highlight">
+                                <div class="input-group mb-3" v-if="thickness_object.id != 0">
+                                    <span class="input-group-text">ID</span>
+                                    {{ thickness_object.id }}
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">TpId</span>
+                                    {{ tp_id }}
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Tp Number</span>
+                                    {{ tp_number }}
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Inspection Date</span>
+                                    <input type="date" class="form-control" v-model="thickness_object.inspectionDate">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Actual Thickness</span>
+                                    <input type="number" class="form-control" v-model="thickness_object.actualThickness">
+                                </div>
+
+                            </div>
+                        </div>
+                        <button type="button" @click="createClick()" v-if="tpId == 0" class="btn btn-primary">
+                            Create
+                        </button>
+                        <button type="button" @click="updateClick()" v-if="tpId == 0" class="btn btn-primary">
+                            Update
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    tpId: 0,
+                    thicknesses: [],
+                    thickness_object: {
+                        id: 0,
+                        tpId: 0,
+                        tpNumber: 0,
+                        inspectionDate: 0,
+                        actualThickness: ''
+                    },
+                    modalTitle: "",
+                    tp_id: 0,
+                    showDetails: [],
+                    tp_number: 0,
+
+                }
+            },
+            methods: {
+                redirectToPage(tpId) {
+                    window.location.href = 'thickness.html?tp-id=' + tpId;
+                },
+                addClick() {
+                    this.modalTitle = "Add Thickness";
+                    this.thickness_object.id = 0;
+                    this.thickness_object.inspectionDate = "";
+                    this.thickness_object.actualThickness = "";
+                },
+                editClick(thickness) {
+                    this.modalTitle = "Edit Thickness";
+                    this.thickness_object.id = thickness.id;
+                    this.thickness_object.tpId = thickness.tpId;
+                    this.thickness_object.inspectionDate = thickness.inspectionDate;
+                    this.thickness_object.actualThickness = thickness.actualThickness;
+                },
+                createClick() {
+                    axios.post("https://localhost:44314/api/thickness", {
+                        tpId: this.tp_id,
+                        tpNumber: this.tp_number,
+                        inspectionDate: this.thickness_object.inspectionDate,
+                        actualThickness: this.thickness_object.actualThickness
+                    })
+                        .then((response) => {
+                            this.refreshData();
+                            alert(response.data);
+                        });
+                },
+                updateClick() {
+                    axios.put("https://localhost:44314/api/thickness", {
+                        id: this.thickness_object.id,
+                        tpId: this.tp_id,
+                        tpNumber: this.tp_number,
+                        inspectionDate: this.thickness_object.inspectionDate,
+                        actualThickness: this.thickness_object.actualThickness
+                    })
+                        .then((response) => {
+                            this.refreshData();
+                            alert(response.data);
+                        });
+                },
+                deleteClick(id) {
+                    if (!confirm("Are you sure?")) {
+                        return;
+                    }
+                    axios.delete("https://localhost:44314/api/thickness/" + id)
+                        .then((response) => {
+                            this.refreshData();
+                            alert(response.data);
+                        });
+                },
+                refreshData() {
+                    axios.get("https://localhost:44314/api/thickness/by-tp-id/"+this.tp_id)
+                        .then((response) => {
+                            this.thicknesses = response.data;
+                            console.log(this.thicknesses)
+                            this.tp_number = this.thicknesses[0].thicknesses.tpNumber
+                        });
+                },
+
+                openCml(index) {
+                    this.showDetails[index] = !this.showDetails[index];
+                },
+            },
+            mounted: function () {
+                const urlParams = new URLSearchParams(window.location.search);
+                this.tp_id = urlParams.get('tp-id');
+                this.tp_number = urlParams.get('tp-number');
+
+                this.refreshData();
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

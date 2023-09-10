@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app" class="container">
+        <h4 class="d-flex justify-content-center">
+            Dexon Example Project
+        </h4>
+
+        <router-view></router-view>
+        <h2>Piping</h2>
+        <button type="button" class="btn btn-primary m-2 float-end" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" @click="addClick()">
+            Add Piping
+        </button>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Line Number</th>
+                    <th>Location</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Drawing Number</th>
+                    <th>Service</th>
+                    <th>Material</th>
+                    <th>Inservice Date</th>
+                    <th>Pipe Size</th>
+                    <th>Original Thickness</th>
+                    <th>Stress</th>
+                    <th>Joint Efficiency</th>
+                    <th>CA</th>
+                    <th>Design Life</th>
+                    <th>Design Pressure</th>
+                    <th>Operating Pressure</th>
+                    <th>Design Temperature</th>
+                    <th>Operating Temperature</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="info in infos">
+                    <td>{{ info.id }}</td>
+                    <td>{{ info.lineNumber }}</td>
+                    <td>{{ info.location }}</td>
+                    <td>{{ info.from }}</td>
+                    <td>{{ info.to }}</td>
+                    <td>{{ info.drawingNumber }}</td>
+                    <td>{{ info.service }}</td>
+                    <td>{{ info.material }}</td>
+                    <td>{{ info.inserviceDate }}</td>
+                    <td>{{ info.pipeSize }}</td>
+                    <td>{{ info.originalThickness }}</td>
+                    <td>{{ info.stress }}</td>
+                    <td>{{ info.jointEfficiency }}</td>
+                    <td>{{ info.ca }}</td>
+                    <td>{{ info.designLife }}</td>
+                    <td>{{ info.designPressure }}</td>
+                    <td>{{ info.operatingPressure }}</td>
+                    <td>{{ info.designTemperature }}</td>
+                    <td>{{ info.operatingTemperature }}</td>
+                    <td>
+                        <button type="button" class="btn btn-light mr-1" @click="redirectToPage(info.id, info.lineNumber)">
+                            view-cml
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                        </button>
+                        <button type="button" class="btn btn-light mr-1" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" @click="editClick(info)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                <path fill-rule="evenodd"
+                                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                            </svg>
+                        </button>
+                        <button type="button" @click="deleteClick(info.id)" class="btn btn-light mr-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                            </svg>
+                        </button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{ modalTitle }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="d-flex flex-row bd-highlight mb-3">
+                            <div class="p-2 w-50 bd-highlight">
+                                <div class="input-group mb-3" v-if="info_object.id != 0">
+                                    <span class="input-group-text">ID</span>
+                                    {{ info_object.id }}
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Line Number</span>
+                                    <input type="text" class="form-control" v-model="info_object.lineNumber">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Location</span>
+                                    <input type="text" class="form-control" v-model="info_object.location">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">From</span>
+                                    <input type="text" class="form-control" v-model="info_object.from">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">To</span>
+                                    <input type="text" class="form-control" v-model="info_object.to">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Drawing Number</span>
+                                    <input type="text" class="form-control" v-model="info_object.drawingNumber">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Service</span>
+                                    <input type="text" class="form-control" v-model="info_object.service">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Material</span>
+                                    <input type="text" class="form-control" v-model="info_object.material">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Inservice Date</span>
+                                    <input type="date" class="form-control" v-model="info_object.inserviceDate">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Pipe Size</span>
+                                    <input type="number" class="form-control" v-model="info_object.pipeSize">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Original Thickness</span>
+                                    <input type="number" class="form-control" v-model="info_object.originalThickness">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Stress</span>
+                                    <input type="number" class="form-control" v-model="info_object.stress">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Joint Efficiency</span>
+                                    <input type="number" class="form-control" v-model="info_object.jointEfficiency">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">CA</span>
+                                    <input type="number" class="form-control" v-model="info_object.ca">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Design Life</span>
+                                    <input type="number" class="form-control" v-model="info_object.designLife">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Design Pressure</span>
+                                    <input type="number" class="form-control" v-model="info_object.designPressure">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Operating Pressure</span>
+                                    <input type="number" class="form-control" v-model="info_object.operatingPressure">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Design Temperature</span>
+                                    <input type="number" class="form-control" v-model="info_object.designTemperature">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Operating Temperature</span>
+                                    <input type="number" class="form-control"
+                                        v-model="info_object.operatingTemperature">
+                                </div>
+
+                            </div>
+                        </div>
+                        <button type="button" @click="createClick()" v-if="infoId == 0" class="btn btn-primary">
+                            Create
+                        </button>
+                        <button type="button" @click="updateClick()" v-if="infoId != 0" class="btn btn-primary">
+                            Update
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    infos: [],
+                    info_object: {
+                        id: 0,
+                        lineNumber: '',
+                        location: '',
+                        from: '',
+                        to: '',
+                        drawingNumber: '',
+                        service: '',
+                        material: '',
+                        inserviceDate: '',
+                        pipeSize: 0,
+                        originalThickness: 0,
+                        stress: 0,
+                        jointEfficiency: 0,
+                        ca: 0,
+                        designLife: 0,
+                        designPressure: 0,
+                        operatingPressure: 0,
+                        designTemperature: 0,
+                        operatingTemperature: 0,
+                    },
+                    modalTitle: "",
+                    infoId: 0,
+                    showDetails: []
+                }
+            },
+            methods: {
+                redirectToPage(infoId, lineNumber) {
+                    window.location.href = 'cml.html?info-id=' + infoId+'&line-number='+lineNumber;
+                },
+                addClick() {
+                    this.modalTitle = "Add Piping";
+                    this.info_object.id = 0;
+                    this.info_object.lineNumber = "";
+                    this.info_object.location = "";
+                    this.info_object.from = "";
+                    this.info_object.to = "";
+                    this.info_object.drawingNumber = "";
+                    this.info_object.service = "";
+                    this.info_object.material = "";
+                    this.info_object.inserviceDate = "";
+                    this.info_object.pipeSize = 0;
+                    this.info_object.originalThickness = 0;
+                    this.info_object.stress = 0;
+                    this.info_object.jointEfficiency = 0;
+                    this.info_object.ca = 0;
+                    this.info_object.designLife = 0;
+                    this.info_object.designPressure = 0;
+                    this.info_object.operatingPressure = 0;
+                    this.info_object.designTemperature = 0;
+                    this.info_object.operatingTemperature = 0;
+                },
+                editClick(info) {
+                    this.modalTitle = "Edit Piping";
+                    this.info_object.id = info.id;
+                    this.info_object.lineNumber = info.lineNumber;
+                    this.info_object.location = info.location;
+                    this.info_object.from = info.from;
+                    this.info_object.to = info.to;
+                    this.info_object.drawingNumber = info.drawingNumber;
+                    this.info_object.service = info.service;
+                    this.info_object.material = info.material;
+                    this.info_object.inserviceDate = info.inserviceDate;
+                    this.info_object.pipeSize = info.pipeSize;
+                    this.info_object.originalThickness = info.originalThickness;
+                    this.info_object.stress = info.stress;
+                    this.info_object.jointEfficiency = info.jointEfficiency;
+                    this.info_object.ca = info.ca;
+                    this.info_object.designLife = info.designLife;
+                    this.info_object.designPressure = info.designPressure;
+                    this.info_object.operatingPressure = info.operatingPressure;
+                    this.info_object.designTemperature = info.designTemperature;
+                    this.info_object.operatingTemperature = info.operatingTemperature;
+                },
+                createClick() {
+                    axios.post("https://localhost:44314/api/Info", {
+                        id: this.info_object.id,
+                        lineNumber: this.info_object.lineNumber,
+                        location: this.info_object.location,
+                        from: this.info_object.from,
+                        to: this.info_object.to,
+                        drawingNumber: this.info_object.drawingNumber,
+                        service: this.info_object.service,
+                        material: this.info_object.material,
+                        inserviceDate: this.info_object.inserviceDate,
+                        pipeSize: this.info_object.pipeSize,
+                        originalThickness: this.info_object.originalThickness,
+                        stress: this.info_object.stress,
+                        jointEfficiency: this.info_object.jointEfficiency,
+                        ca: this.info_object.ca,
+                        designLife: this.info_object.designLife,
+                        designPressure: this.info_object.designPressure,
+                        operatingPressure: this.info_object.operatingPressure,
+                        designTemperature: this.info_object.designTemperature,
+                        operatingTemperature: this.info_object.operatingTemperature
+                    })
+                        .then((response) => {
+                            this.refreshData();
+                            alert(response.data);
+                        });
+                },
+                updateClick() {
+                    axios.put("https://localhost:44314/api/Info", {
+                        id: this.info_object.id,
+                        lineNumber: this.info_object.lineNumber,
+                        location: this.info_object.location,
+                        from: this.info_object.from,
+                        to: this.info_object.to,
+                        drawingNumber: this.info_object.drawingNumber,
+                        service: this.info_object.service,
+                        material: this.info_object.material,
+                        inserviceDate: this.info_object.inserviceDate,
+                        pipeSize: this.info_object.pipeSize,
+                        originalThickness: this.info_object.originalThickness,
+                        stress: this.info_object.stress,
+                        jointEfficiency: this.info_object.jointEfficiency,
+                        ca: this.info_object.ca,
+                        designLife: this.info_object.designLife,
+                        designPressure: this.info_object.designPressure,
+                        operatingPressure: this.info_object.operatingPressure,
+                        designTemperature: this.info_object.designTemperature,
+                        operatingTemperature: this.info_object.operatingTemperature
+                    })
+                        .then((response) => {
+                            this.refreshData();
+                            alert(response.data);
+                        });
+                },
+                deleteClick(id) {
+                    if (!confirm("Are you sure?")) {
+                        return;
+                    }
+                    axios.delete("https://localhost:44314/api/Info/" + id)
+                        .then((response) => {
+                            this.refreshData();
+                            alert(response.data);
+                        });
+                },
+                refreshData() {
+                    axios.get("https://localhost:44314/api/Info/GetAll")
+                        .then((response) => {
+                            this.infos = response.data;
+                        });
+                },
+
+                openCml(index) {
+                    this.showDetails[index] = !this.showDetails[index];
+                },
+            },
+            mounted: function () {
+                this.refreshData();
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

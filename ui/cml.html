@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app" class="container">
+        <h4 class="d-flex justify-content-center">
+            Dexon Example Project
+        </h4>
+
+        <router-view></router-view>
+        <h2>CML Table</h2>
+        <h3>Line Number: {{line_number}}</h3>
+
+        <button type="button" class="btn btn-primary m-2 float-end" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" @click="addClick()">
+            Add Cml
+        </button>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>InfoId</th>
+                    <th>Line Number</th>
+                    <th>Cml Number</th>
+                    <th>Cml Description</th>
+                    <th>AOD</th>
+                    <th>Design Thickness</th>
+                    <th>Structural Thickness</th>
+                    <th>Required Thickness</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="cml in cmls">
+                    <td>{{ cml.cml.id }}</td>
+                    <td>{{ cml.cml.infoId }}</td>
+                    <td>{{ line_number }}</td>
+                    <td>{{ cml.cml.cmlNumber }}</td>
+                    <td>{{ cml.cml.cmlDescription }}</td>
+                    <td>{{ cml.cml.actualOutsideDiameter }}</td>
+                    <td>{{ cml.cml.designThickness }}</td>
+                    <td>{{ cml.cml.structuralThickness }}</td>
+                    <td>{{ cml.cml.requiredThickness }}</td>
+                    <td>
+                        <button type="button" class="btn btn-light mr-1" @click="redirectToPage(cml.cml.id, cml.cml.cmlNumber)">
+                            view tp
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                        </button>
+                        <button type="button" class="btn btn-light mr-1" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" @click="editClick(cml.cml)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                <path fill-rule="evenodd"
+                                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                            </svg>
+                        </button>
+                        <button type="button" @click="deleteClick(cml.cml.id)" class="btn btn-light mr-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                            </svg>
+                        </button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{ modalTitle }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="d-flex flex-row bd-highlight mb-3">
+                            <div class="p-2 w-50 bd-highlight">
+                                <div class="input-group mb-3" v-if="cml_object.id != 0">
+                                    <span class="input-group-text">ID</span>
+                                    {{ cml_object.id }}
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">InfoId</span>
+                                    {{ infoId }}
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Line Number</span>
+                                    {{line_number}}
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Cml Number</span>
+                                    <input type="number" class="form-control" v-model="cml_object.cmlNumber">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Cml Description</span>
+                                    <input type="text" class="form-control" v-model="cml_object.cmlDescription">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" @click="createClick()" v-if="cmlId == 0" class="btn btn-primary">
+                            Create
+                        </button>
+                        <button type="button" @click="updateClick()" v-if="cmlId == 0" class="btn btn-primary">
+                            Update
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    cmlId: 0,
+                    cmls: [],
+                    cml_object: {
+                        id: 0,
+                        infoId: 0,
+                        lineNumber: '',
+                        cmlNumber: 0,
+                        cmlDescription: '',
+                        actualOutsideDiameter: 0,
+                        designThickness: 0,
+                        structuralThickness: 0,
+                        requiredThickness: 0
+                    },
+                    modalTitle: "",
+                    infoId: 0,
+                    showDetails: [],
+                    line_number: ''
+                }
+            },
+            methods: {
+                redirectToPage(cmlId, cmlNumber) {
+                    window.location.href = 'testpoint.html?cml-id=' + cmlId+'&cml-number='+cmlNumber;
+                },
+                addClick() {
+                    this.modalTitle = "Add Cml";
+                    this.cml_object.id = "";
+                    this.cml_object.cmlNumber = "";
+                    this.cml_object.cmlDescription = "";
+                    this.cml_object.actualOutsideDiameter = "";
+                    this.cml_object.designThickness = "";
+                    this.cml_object.structuralThickness = "";
+                    this.cml_object.requiredThickness = "";
+
+
+
+                },
+                editClick(cml) {
+                    this.modalTitle = "Edit Cml";
+                    this.cml_object.id = cml.id;
+                    this.cml_object.infoId = cml.infoId;
+                    this.cml_object.lineNumber = cml.lineNumber;
+                    this.cml_object.cmlNumber = cml.cmlNumber;
+                    this.cml_object.cmlDescription = cml.cmlDescription;
+                    this.cml_object.actualOutsideDiameter = cml.actualOutsideDiameter;
+                    this.cml_object.designThickness = cml.designThickness;
+                    this.cml_object.structuralThickness = cml.structuralThickness;
+                    this.cml_object.requiredThickness = cml.requiredThickness;
+                },
+                createClick() {
+                    axios.post("https://localhost:44314/api/cml", {
+                        infoId: this.infoId,
+                        lineNumber: this.line_number,
+                        cmlNumber: this.cml_object.cmlNumber,
+                        cmlDescription: this.cml_object.cmlDescription
+                    })
+                        .then((response) => {
+                            this.refreshData();
+                            alert(response.data);
+                        });
+                },
+                updateClick() {
+                    axios.put("https://localhost:44314/api/cml", {
+                        id: this.cml_object.id,
+                        infoId: this.infoId,
+                        lineNumber: this.line_number,
+                        cmlNumber: this.cml_object.cmlNumber,
+                        cmlDescription: this.cml_object.cmlDescription,
+                        actualOutsideDiameter: this.cml_object.actualOutsideDiameter,
+                        designThickness: this.cml_object.designThickness,
+                        structuralThickness: this.cml_object.structuralThickness,
+                        requiredThickness: this.cml_object.requiredThickness
+                    })
+                        .then((response) => {
+                            this.refreshData();
+                            alert(response.data);
+                        });
+                },
+                deleteClick(id) {
+                    if (!confirm("Are you sure?")) {
+                        return;
+                    }
+                    axios.delete("https://localhost:44314/api/cml/" + id)
+                        .then((response) => {
+                            this.refreshData();
+                            alert(response.data);
+                        });
+                },
+                refreshData() {
+                    axios.get("https://localhost:44314/api/Cml/by-info-id/"+this.infoId)
+                        .then((response) => {
+                            this.cmls = response.data;
+                        });
+                },
+
+                openCml(index) {
+                    this.showDetails[index] = !this.showDetails[index];
+                },
+            },
+            mounted: function () {
+                const urlParams = new URLSearchParams(window.location.search);
+                this.infoId = urlParams.get('info-id');
+                this.line_number = urlParams.get('line-number')
+
+                this.refreshData();
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
