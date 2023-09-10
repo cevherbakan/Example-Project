@@ -1,0 +1,1448 @@
+{
+	"info": {
+		"_postman_id": "1d698fc5-b1e4-44a6-85ab-df881ad86b28",
+		"name": "DexonApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Cml",
+					"item": [
+						{
+							"name": "/api/Cml",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 76449876,\n  \"infoId\": 68161112,\n  \"info\": {\n    \"id\": -14804118,\n    \"lineNumber\": \"non Ut dolor\",\n    \"location\": \"nulla qui quis magna\",\n    \"from\": \"mollit cillum ea\",\n    \"to\": \"enim fugiat\",\n    \"drawingNumber\": \"Duis aute adipisicing nisi\",\n    \"service\": \"labore irure esse in\",\n    \"material\": \"aliqua ad minim sint\",\n    \"inserviceDate\": \"1957-11-05T10:51:27.325Z\",\n    \"pipeSize\": -49258120.936128646,\n    \"originalThickness\": 69876873.39792985,\n    \"stress\": -65098724.528253935,\n    \"jointEfficiency\": -12460826.044587448,\n    \"ca\": 76043000.54315633,\n    \"designLife\": -55459299.319008395,\n    \"designPressure\": -32131904.808494523,\n    \"operatingPressure\": 38973979.962774485,\n    \"designTemperature\": 32398069.12095724,\n    \"operatingTemperature\": -40362652.74255793\n  },\n  \"lineNumber\": \"te\",\n  \"cmlNumber\": 67613963,\n  \"cmlDescription\": \"aliquip cillum in culpa\",\n  \"actualOutsideDiameter\": -92492854.00651325,\n  \"designThickness\": 87924468.48163101,\n  \"structuralThickness\": 70846056.08700979,\n  \"requiredThickness\": 55975451.99214223\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Cml",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Cml"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 76449876,\n  \"infoId\": 68161112,\n  \"info\": {\n    \"id\": -14804118,\n    \"lineNumber\": \"non Ut dolor\",\n    \"location\": \"nulla qui quis magna\",\n    \"from\": \"mollit cillum ea\",\n    \"to\": \"enim fugiat\",\n    \"drawingNumber\": \"Duis aute adipisicing nisi\",\n    \"service\": \"labore irure esse in\",\n    \"material\": \"aliqua ad minim sint\",\n    \"inserviceDate\": \"1957-11-05T10:51:27.325Z\",\n    \"pipeSize\": -49258120.936128646,\n    \"originalThickness\": 69876873.39792985,\n    \"stress\": -65098724.528253935,\n    \"jointEfficiency\": -12460826.044587448,\n    \"ca\": 76043000.54315633,\n    \"designLife\": -55459299.319008395,\n    \"designPressure\": -32131904.808494523,\n    \"operatingPressure\": 38973979.962774485,\n    \"designTemperature\": 32398069.12095724,\n    \"operatingTemperature\": -40362652.74255793\n  },\n  \"lineNumber\": \"te\",\n  \"cmlNumber\": 67613963,\n  \"cmlDescription\": \"aliquip cillum in culpa\",\n  \"actualOutsideDiameter\": -92492854.00651325,\n  \"designThickness\": 87924468.48163101,\n  \"structuralThickness\": 70846056.08700979,\n  \"requiredThickness\": 55975451.99214223\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Cml",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Cml"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Cml",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 76449876,\n  \"infoId\": 68161112,\n  \"info\": {\n    \"id\": -14804118,\n    \"lineNumber\": \"non Ut dolor\",\n    \"location\": \"nulla qui quis magna\",\n    \"from\": \"mollit cillum ea\",\n    \"to\": \"enim fugiat\",\n    \"drawingNumber\": \"Duis aute adipisicing nisi\",\n    \"service\": \"labore irure esse in\",\n    \"material\": \"aliqua ad minim sint\",\n    \"inserviceDate\": \"1957-11-05T10:51:27.325Z\",\n    \"pipeSize\": -49258120.936128646,\n    \"originalThickness\": 69876873.39792985,\n    \"stress\": -65098724.528253935,\n    \"jointEfficiency\": -12460826.044587448,\n    \"ca\": 76043000.54315633,\n    \"designLife\": -55459299.319008395,\n    \"designPressure\": -32131904.808494523,\n    \"operatingPressure\": 38973979.962774485,\n    \"designTemperature\": 32398069.12095724,\n    \"operatingTemperature\": -40362652.74255793\n  },\n  \"lineNumber\": \"te\",\n  \"cmlNumber\": 67613963,\n  \"cmlDescription\": \"aliquip cillum in culpa\",\n  \"actualOutsideDiameter\": -92492854.00651325,\n  \"designThickness\": 87924468.48163101,\n  \"structuralThickness\": 70846056.08700979,\n  \"requiredThickness\": 55975451.99214223\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Cml",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Cml"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 76449876,\n  \"infoId\": 68161112,\n  \"info\": {\n    \"id\": -14804118,\n    \"lineNumber\": \"non Ut dolor\",\n    \"location\": \"nulla qui quis magna\",\n    \"from\": \"mollit cillum ea\",\n    \"to\": \"enim fugiat\",\n    \"drawingNumber\": \"Duis aute adipisicing nisi\",\n    \"service\": \"labore irure esse in\",\n    \"material\": \"aliqua ad minim sint\",\n    \"inserviceDate\": \"1957-11-05T10:51:27.325Z\",\n    \"pipeSize\": -49258120.936128646,\n    \"originalThickness\": 69876873.39792985,\n    \"stress\": -65098724.528253935,\n    \"jointEfficiency\": -12460826.044587448,\n    \"ca\": 76043000.54315633,\n    \"designLife\": -55459299.319008395,\n    \"designPressure\": -32131904.808494523,\n    \"operatingPressure\": 38973979.962774485,\n    \"designTemperature\": 32398069.12095724,\n    \"operatingTemperature\": -40362652.74255793\n  },\n  \"lineNumber\": \"te\",\n  \"cmlNumber\": 67613963,\n  \"cmlDescription\": \"aliquip cillum in culpa\",\n  \"actualOutsideDiameter\": -92492854.00651325,\n  \"designThickness\": 87924468.48163101,\n  \"structuralThickness\": 70846056.08700979,\n  \"requiredThickness\": 55975451.99214223\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Cml",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Cml"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Cml/GetAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Cml/GetAll",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Cml",
+										"GetAll"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Cml/GetAll",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Cml",
+												"GetAll"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Cml/by-info-id/:infoId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Cml/by-info-id/:infoId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Cml",
+										"by-info-id",
+										":infoId"
+									],
+									"variable": [
+										{
+											"key": "infoId",
+											"value": "98028955",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Cml/by-info-id/:infoId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Cml",
+												"by-info-id",
+												":infoId"
+											],
+											"variable": [
+												{
+													"key": "infoId",
+													"value": "98028955",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Cml/:id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Cml/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Cml",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "98028955",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Cml/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Cml",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "98028955",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Info",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Info/:id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Info/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Info",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "98028955",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Info/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Info",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "98028955",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Info/:id",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Info/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Info",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "98028955",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Info/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Info",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "98028955",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Info",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 18665638,\n  \"lineNumber\": \"occaecat exercitation\",\n  \"location\": \"reprehenderit dolor id\",\n  \"from\": \"est culpa voluptate magna\",\n  \"to\": \"sit dolore non Duis\",\n  \"drawingNumber\": \"reprehenderit ut\",\n  \"service\": \"Lorem dolor elit\",\n  \"material\": \"et incididunt\",\n  \"inserviceDate\": \"1973-05-17T15:15:21.855Z\",\n  \"pipeSize\": 38405430.076694995,\n  \"originalThickness\": 4329421.602961987,\n  \"stress\": -66422296.08480874,\n  \"jointEfficiency\": -73333648.11305124,\n  \"ca\": -97580217.33362225,\n  \"designLife\": 9333677.729162559,\n  \"designPressure\": -83383998.85136956,\n  \"operatingPressure\": 96554601.47818157,\n  \"designTemperature\": 19524716.793781713,\n  \"operatingTemperature\": -85339800.22514878\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Info",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Info"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 18665638,\n  \"lineNumber\": \"occaecat exercitation\",\n  \"location\": \"reprehenderit dolor id\",\n  \"from\": \"est culpa voluptate magna\",\n  \"to\": \"sit dolore non Duis\",\n  \"drawingNumber\": \"reprehenderit ut\",\n  \"service\": \"Lorem dolor elit\",\n  \"material\": \"et incididunt\",\n  \"inserviceDate\": \"1973-05-17T15:15:21.855Z\",\n  \"pipeSize\": 38405430.076694995,\n  \"originalThickness\": 4329421.602961987,\n  \"stress\": -66422296.08480874,\n  \"jointEfficiency\": -73333648.11305124,\n  \"ca\": -97580217.33362225,\n  \"designLife\": 9333677.729162559,\n  \"designPressure\": -83383998.85136956,\n  \"operatingPressure\": 96554601.47818157,\n  \"designTemperature\": 19524716.793781713,\n  \"operatingTemperature\": -85339800.22514878\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Info",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Info"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Info",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 18665638,\n  \"lineNumber\": \"occaecat exercitation\",\n  \"location\": \"reprehenderit dolor id\",\n  \"from\": \"est culpa voluptate magna\",\n  \"to\": \"sit dolore non Duis\",\n  \"drawingNumber\": \"reprehenderit ut\",\n  \"service\": \"Lorem dolor elit\",\n  \"material\": \"et incididunt\",\n  \"inserviceDate\": \"1973-05-17T15:15:21.855Z\",\n  \"pipeSize\": 38405430.076694995,\n  \"originalThickness\": 4329421.602961987,\n  \"stress\": -66422296.08480874,\n  \"jointEfficiency\": -73333648.11305124,\n  \"ca\": -97580217.33362225,\n  \"designLife\": 9333677.729162559,\n  \"designPressure\": -83383998.85136956,\n  \"operatingPressure\": 96554601.47818157,\n  \"designTemperature\": 19524716.793781713,\n  \"operatingTemperature\": -85339800.22514878\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Info",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Info"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 18665638,\n  \"lineNumber\": \"occaecat exercitation\",\n  \"location\": \"reprehenderit dolor id\",\n  \"from\": \"est culpa voluptate magna\",\n  \"to\": \"sit dolore non Duis\",\n  \"drawingNumber\": \"reprehenderit ut\",\n  \"service\": \"Lorem dolor elit\",\n  \"material\": \"et incididunt\",\n  \"inserviceDate\": \"1973-05-17T15:15:21.855Z\",\n  \"pipeSize\": 38405430.076694995,\n  \"originalThickness\": 4329421.602961987,\n  \"stress\": -66422296.08480874,\n  \"jointEfficiency\": -73333648.11305124,\n  \"ca\": -97580217.33362225,\n  \"designLife\": 9333677.729162559,\n  \"designPressure\": -83383998.85136956,\n  \"operatingPressure\": 96554601.47818157,\n  \"designTemperature\": 19524716.793781713,\n  \"operatingTemperature\": -85339800.22514878\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Info",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Info"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Info/GetAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Info/GetAll",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Info",
+										"GetAll"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Info/GetAll",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Info",
+												"GetAll"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "TestPoint",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/TestPoint/:id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/TestPoint/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TestPoint",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "98028955",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/TestPoint/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"TestPoint",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "98028955",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/TestPoint/:id",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/TestPoint/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TestPoint",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "98028955",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/TestPoint/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"TestPoint",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "98028955",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/TestPoint",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -32767550,\n  \"cmlId\": -51672358,\n  \"cml\": {\n    \"id\": 42298017,\n    \"infoId\": 10932174,\n    \"info\": {\n      \"id\": -40246607,\n      \"lineNumber\": \"Lorem consectetur consequat\",\n      \"location\": \"adipisicing id\",\n      \"from\": \"aliqua deserunt enim dolor in\",\n      \"to\": \"a\",\n      \"drawingNumber\": \"iru\",\n      \"service\": \"anim sit\",\n      \"material\": \"voluptate cupidatat Lorem dolore\",\n      \"inserviceDate\": \"1946-02-11T04:20:44.815Z\",\n      \"pipeSize\": 4952448.476864383,\n      \"originalThickness\": 49829548.253311455,\n      \"stress\": -98550417.34983692,\n      \"jointEfficiency\": 38365009.6496062,\n      \"ca\": -20465626.607488245,\n      \"designLife\": -69998470.90522447,\n      \"designPressure\": 26968998.305229828,\n      \"operatingPressure\": -47458577.24358351,\n      \"designTemperature\": -60977188.14837849,\n      \"operatingTemperature\": -37557970.52873699\n    },\n    \"lineNumber\": \"in\",\n    \"cmlNumber\": -686276,\n    \"cmlDescription\": \"sit ad\",\n    \"actualOutsideDiameter\": 55868847.55754933,\n    \"designThickness\": 7025959.157565832,\n    \"structuralThickness\": 9243981.391360685,\n    \"requiredThickness\": -53742896.9280132\n  },\n  \"cmlNumber\": -9637645,\n  \"tpNumber\": 60268048,\n  \"tpDescription\": \"incididunt voluptate\",\n  \"note\": \"consequat anim\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/TestPoint",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"TestPoint"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -32767550,\n  \"cmlId\": -51672358,\n  \"cml\": {\n    \"id\": 42298017,\n    \"infoId\": 10932174,\n    \"info\": {\n      \"id\": -40246607,\n      \"lineNumber\": \"Lorem consectetur consequat\",\n      \"location\": \"adipisicing id\",\n      \"from\": \"aliqua deserunt enim dolor in\",\n      \"to\": \"a\",\n      \"drawingNumber\": \"iru\",\n      \"service\": \"anim sit\",\n      \"material\": \"voluptate cupidatat Lorem dolore\",\n      \"inserviceDate\": \"1946-02-11T04:20:44.815Z\",\n      \"pipeSize\": 4952448.476864383,\n      \"originalThickness\": 49829548.253311455,\n      \"stress\": -98550417.34983692,\n      \"jointEfficiency\": 38365009.6496062,\n      \"ca\": -20465626.607488245,\n      \"designLife\": -69998470.90522447,\n      \"designPressure\": 26968998.305229828,\n      \"operatingPressure\": -47458577.24358351,\n      \"designTemperature\": -60977188.14837849,\n      \"operatingTemperature\": -37557970.52873699\n    },\n    \"lineNumber\": \"in\",\n    \"cmlNumber\": -686276,\n    \"cmlDescription\": \"sit ad\",\n    \"actualOutsideDiameter\": 55868847.55754933,\n    \"designThickness\": 7025959.157565832,\n    \"structuralThickness\": 9243981.391360685,\n    \"requiredThickness\": -53742896.9280132\n  },\n  \"cmlNumber\": -9637645,\n  \"tpNumber\": 60268048,\n  \"tpDescription\": \"incididunt voluptate\",\n  \"note\": \"consequat anim\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/TestPoint",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TestPoint"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/TestPoint",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -32767550,\n  \"cmlId\": -51672358,\n  \"cml\": {\n    \"id\": 42298017,\n    \"infoId\": 10932174,\n    \"info\": {\n      \"id\": -40246607,\n      \"lineNumber\": \"Lorem consectetur consequat\",\n      \"location\": \"adipisicing id\",\n      \"from\": \"aliqua deserunt enim dolor in\",\n      \"to\": \"a\",\n      \"drawingNumber\": \"iru\",\n      \"service\": \"anim sit\",\n      \"material\": \"voluptate cupidatat Lorem dolore\",\n      \"inserviceDate\": \"1946-02-11T04:20:44.815Z\",\n      \"pipeSize\": 4952448.476864383,\n      \"originalThickness\": 49829548.253311455,\n      \"stress\": -98550417.34983692,\n      \"jointEfficiency\": 38365009.6496062,\n      \"ca\": -20465626.607488245,\n      \"designLife\": -69998470.90522447,\n      \"designPressure\": 26968998.305229828,\n      \"operatingPressure\": -47458577.24358351,\n      \"designTemperature\": -60977188.14837849,\n      \"operatingTemperature\": -37557970.52873699\n    },\n    \"lineNumber\": \"in\",\n    \"cmlNumber\": -686276,\n    \"cmlDescription\": \"sit ad\",\n    \"actualOutsideDiameter\": 55868847.55754933,\n    \"designThickness\": 7025959.157565832,\n    \"structuralThickness\": 9243981.391360685,\n    \"requiredThickness\": -53742896.9280132\n  },\n  \"cmlNumber\": -9637645,\n  \"tpNumber\": 60268048,\n  \"tpDescription\": \"incididunt voluptate\",\n  \"note\": \"consequat anim\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/TestPoint",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"TestPoint"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -32767550,\n  \"cmlId\": -51672358,\n  \"cml\": {\n    \"id\": 42298017,\n    \"infoId\": 10932174,\n    \"info\": {\n      \"id\": -40246607,\n      \"lineNumber\": \"Lorem consectetur consequat\",\n      \"location\": \"adipisicing id\",\n      \"from\": \"aliqua deserunt enim dolor in\",\n      \"to\": \"a\",\n      \"drawingNumber\": \"iru\",\n      \"service\": \"anim sit\",\n      \"material\": \"voluptate cupidatat Lorem dolore\",\n      \"inserviceDate\": \"1946-02-11T04:20:44.815Z\",\n      \"pipeSize\": 4952448.476864383,\n      \"originalThickness\": 49829548.253311455,\n      \"stress\": -98550417.34983692,\n      \"jointEfficiency\": 38365009.6496062,\n      \"ca\": -20465626.607488245,\n      \"designLife\": -69998470.90522447,\n      \"designPressure\": 26968998.305229828,\n      \"operatingPressure\": -47458577.24358351,\n      \"designTemperature\": -60977188.14837849,\n      \"operatingTemperature\": -37557970.52873699\n    },\n    \"lineNumber\": \"in\",\n    \"cmlNumber\": -686276,\n    \"cmlDescription\": \"sit ad\",\n    \"actualOutsideDiameter\": 55868847.55754933,\n    \"designThickness\": 7025959.157565832,\n    \"structuralThickness\": 9243981.391360685,\n    \"requiredThickness\": -53742896.9280132\n  },\n  \"cmlNumber\": -9637645,\n  \"tpNumber\": 60268048,\n  \"tpDescription\": \"incididunt voluptate\",\n  \"note\": \"consequat anim\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/TestPoint",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TestPoint"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/TestPoint/GetAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/TestPoint/GetAll",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"TestPoint",
+										"GetAll"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/TestPoint/GetAll",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TestPoint",
+												"GetAll"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/TestPoint/by-cml-id/:cmlId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/TestPoint/by-cml-id/:cmlId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"TestPoint",
+										"by-cml-id",
+										":cmlId"
+									],
+									"variable": [
+										{
+											"key": "cmlId",
+											"value": "98028955",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/TestPoint/by-cml-id/:cmlId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TestPoint",
+												"by-cml-id",
+												":cmlId"
+											],
+											"variable": [
+												{
+													"key": "cmlId",
+													"value": "98028955",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Thickness",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Thickness/:id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Thickness/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Thickness",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "98028955",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Thickness/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Thickness",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "98028955",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Thickness/:id",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Thickness/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Thickness",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "98028955",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Thickness/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Thickness",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "98028955",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Thickness",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -37316446,\n  \"tpId\": 55755936,\n  \"testPoint\": {\n    \"id\": 57864316,\n    \"cmlId\": -4172129,\n    \"cml\": {\n      \"id\": -10719233,\n      \"infoId\": -42404129,\n      \"info\": {\n        \"id\": -62107404,\n        \"lineNumber\": \"eu\",\n        \"location\": \"enim aute\",\n        \"from\": \"irure commodo in occaecat\",\n        \"to\": \"Excepteur in\",\n        \"drawingNumber\": \"est irure\",\n        \"service\": \"anim do irure\",\n        \"material\": \"dolor ipsum deserunt sint\",\n        \"inserviceDate\": \"2003-03-24T09:53:27.067Z\",\n        \"pipeSize\": 46151466.87938368,\n        \"originalThickness\": 49313145.1735411,\n        \"stress\": -74804799.30543731,\n        \"jointEfficiency\": -45595023.5350739,\n        \"ca\": -27869351.493123367,\n        \"designLife\": -87245148.74734539,\n        \"designPressure\": -3689639.1964296103,\n        \"operatingPressure\": 60449928.439535886,\n        \"designTemperature\": -7653916.669486582,\n        \"operatingTemperature\": -44211062.07343866\n      },\n      \"lineNumber\": \"sint non\",\n      \"cmlNumber\": -20078855,\n      \"cmlDescription\": \"velit\",\n      \"actualOutsideDiameter\": 89643708.40474251,\n      \"designThickness\": 56796237.89154902,\n      \"structuralThickness\": 60078457.39319113,\n      \"requiredThickness\": -95251726.559795\n    },\n    \"cmlNumber\": 61872444,\n    \"tpNumber\": -12929010,\n    \"tpDescription\": \"amet cillum sint dolore eu\",\n    \"note\": \"Lorem irure\"\n  },\n  \"tpNumber\": 9304689,\n  \"inspectionDate\": \"1972-10-15T06:16:51.855Z\",\n  \"actualThickness\": 47773996.47328621\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Thickness",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Thickness"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -37316446,\n  \"tpId\": 55755936,\n  \"testPoint\": {\n    \"id\": 57864316,\n    \"cmlId\": -4172129,\n    \"cml\": {\n      \"id\": -10719233,\n      \"infoId\": -42404129,\n      \"info\": {\n        \"id\": -62107404,\n        \"lineNumber\": \"eu\",\n        \"location\": \"enim aute\",\n        \"from\": \"irure commodo in occaecat\",\n        \"to\": \"Excepteur in\",\n        \"drawingNumber\": \"est irure\",\n        \"service\": \"anim do irure\",\n        \"material\": \"dolor ipsum deserunt sint\",\n        \"inserviceDate\": \"2003-03-24T09:53:27.067Z\",\n        \"pipeSize\": 46151466.87938368,\n        \"originalThickness\": 49313145.1735411,\n        \"stress\": -74804799.30543731,\n        \"jointEfficiency\": -45595023.5350739,\n        \"ca\": -27869351.493123367,\n        \"designLife\": -87245148.74734539,\n        \"designPressure\": -3689639.1964296103,\n        \"operatingPressure\": 60449928.439535886,\n        \"designTemperature\": -7653916.669486582,\n        \"operatingTemperature\": -44211062.07343866\n      },\n      \"lineNumber\": \"sint non\",\n      \"cmlNumber\": -20078855,\n      \"cmlDescription\": \"velit\",\n      \"actualOutsideDiameter\": 89643708.40474251,\n      \"designThickness\": 56796237.89154902,\n      \"structuralThickness\": 60078457.39319113,\n      \"requiredThickness\": -95251726.559795\n    },\n    \"cmlNumber\": 61872444,\n    \"tpNumber\": -12929010,\n    \"tpDescription\": \"amet cillum sint dolore eu\",\n    \"note\": \"Lorem irure\"\n  },\n  \"tpNumber\": 9304689,\n  \"inspectionDate\": \"1972-10-15T06:16:51.855Z\",\n  \"actualThickness\": 47773996.47328621\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Thickness",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Thickness"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Thickness",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -37316446,\n  \"tpId\": 55755936,\n  \"testPoint\": {\n    \"id\": 57864316,\n    \"cmlId\": -4172129,\n    \"cml\": {\n      \"id\": -10719233,\n      \"infoId\": -42404129,\n      \"info\": {\n        \"id\": -62107404,\n        \"lineNumber\": \"eu\",\n        \"location\": \"enim aute\",\n        \"from\": \"irure commodo in occaecat\",\n        \"to\": \"Excepteur in\",\n        \"drawingNumber\": \"est irure\",\n        \"service\": \"anim do irure\",\n        \"material\": \"dolor ipsum deserunt sint\",\n        \"inserviceDate\": \"2003-03-24T09:53:27.067Z\",\n        \"pipeSize\": 46151466.87938368,\n        \"originalThickness\": 49313145.1735411,\n        \"stress\": -74804799.30543731,\n        \"jointEfficiency\": -45595023.5350739,\n        \"ca\": -27869351.493123367,\n        \"designLife\": -87245148.74734539,\n        \"designPressure\": -3689639.1964296103,\n        \"operatingPressure\": 60449928.439535886,\n        \"designTemperature\": -7653916.669486582,\n        \"operatingTemperature\": -44211062.07343866\n      },\n      \"lineNumber\": \"sint non\",\n      \"cmlNumber\": -20078855,\n      \"cmlDescription\": \"velit\",\n      \"actualOutsideDiameter\": 89643708.40474251,\n      \"designThickness\": 56796237.89154902,\n      \"structuralThickness\": 60078457.39319113,\n      \"requiredThickness\": -95251726.559795\n    },\n    \"cmlNumber\": 61872444,\n    \"tpNumber\": -12929010,\n    \"tpDescription\": \"amet cillum sint dolore eu\",\n    \"note\": \"Lorem irure\"\n  },\n  \"tpNumber\": 9304689,\n  \"inspectionDate\": \"1972-10-15T06:16:51.855Z\",\n  \"actualThickness\": 47773996.47328621\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Thickness",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Thickness"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -37316446,\n  \"tpId\": 55755936,\n  \"testPoint\": {\n    \"id\": 57864316,\n    \"cmlId\": -4172129,\n    \"cml\": {\n      \"id\": -10719233,\n      \"infoId\": -42404129,\n      \"info\": {\n        \"id\": -62107404,\n        \"lineNumber\": \"eu\",\n        \"location\": \"enim aute\",\n        \"from\": \"irure commodo in occaecat\",\n        \"to\": \"Excepteur in\",\n        \"drawingNumber\": \"est irure\",\n        \"service\": \"anim do irure\",\n        \"material\": \"dolor ipsum deserunt sint\",\n        \"inserviceDate\": \"2003-03-24T09:53:27.067Z\",\n        \"pipeSize\": 46151466.87938368,\n        \"originalThickness\": 49313145.1735411,\n        \"stress\": -74804799.30543731,\n        \"jointEfficiency\": -45595023.5350739,\n        \"ca\": -27869351.493123367,\n        \"designLife\": -87245148.74734539,\n        \"designPressure\": -3689639.1964296103,\n        \"operatingPressure\": 60449928.439535886,\n        \"designTemperature\": -7653916.669486582,\n        \"operatingTemperature\": -44211062.07343866\n      },\n      \"lineNumber\": \"sint non\",\n      \"cmlNumber\": -20078855,\n      \"cmlDescription\": \"velit\",\n      \"actualOutsideDiameter\": 89643708.40474251,\n      \"designThickness\": 56796237.89154902,\n      \"structuralThickness\": 60078457.39319113,\n      \"requiredThickness\": -95251726.559795\n    },\n    \"cmlNumber\": 61872444,\n    \"tpNumber\": -12929010,\n    \"tpDescription\": \"amet cillum sint dolore eu\",\n    \"note\": \"Lorem irure\"\n  },\n  \"tpNumber\": 9304689,\n  \"inspectionDate\": \"1972-10-15T06:16:51.855Z\",\n  \"actualThickness\": 47773996.47328621\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Thickness",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Thickness"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Thickness/GetAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Thickness/GetAll",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Thickness",
+										"GetAll"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Thickness/GetAll",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Thickness",
+												"GetAll"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Thickness/by-tp-id/:tpId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Thickness/by-tp-id/:tpId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Thickness",
+										"by-tp-id",
+										":tpId"
+									],
+									"variable": [
+										{
+											"key": "tpId",
+											"value": "98028955",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Thickness/by-tp-id/:tpId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Thickness",
+												"by-tp-id",
+												":tpId"
+											],
+											"variable": [
+												{
+													"key": "tpId",
+													"value": "98028955",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/",
+			"type": "string"
+		}
+	]
+}
