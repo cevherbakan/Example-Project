@@ -7,13 +7,137 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 
+
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+        }
+
+        .table td button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            float: left;
+    margin-right: 5px;
+        }
+
+        .table td button:hover {
+            background-color: #0056b3;
+        }
+
+
+        .table td button.view-cml {
+            background-color: transparent;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .table td button.view-cml:hover {
+            color: #0056b3;
+        }
+
+        .modal-dialog {
+            max-width: 800px;
+            margin: 1.75rem auto;
+        }
+
+        .modal-content {
+            border-radius: 10px;
+        }
+
+        .modal-header {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .modal-title {
+            color: #fff;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .modal-columns {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .modal-column {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .vertical-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+    </style>
+
+
+
 </head>
 
 <body>
     <div id="app" class="container">
-        <h4 class="d-flex justify-content-center">
-            Dexon Example Project
-        </h4>
+        <div class="header">
+            <h4 class="d-flex justify-content-center">
+                Dexon Example Project
+            </h4>
+        </div>
 
         <router-view></router-view>
         <h2>Thickness Table</h2>
@@ -77,15 +201,15 @@
                             <div class="p-2 w-50 bd-highlight">
                                 <div class="input-group mb-3" v-if="thickness_object.id != 0">
                                     <span class="input-group-text">ID</span>
-                                    {{ thickness_object.id }}
+                                    <span class="vertical-center">{{ thickness_object.id }}</span>
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">TpId</span>
-                                    {{ tp_id }}
+                                    <span class="vertical-center">{{ tp_id }}</span>
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Tp Number</span>
-                                    {{ tp_number }}
+                                    <span class="vertical-center">{{ tp_number }}</span>
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Inspection Date</span>
