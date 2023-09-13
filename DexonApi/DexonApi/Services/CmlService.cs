@@ -82,7 +82,7 @@ namespace DexonApi.Services
             {
                 return 0;
             }
-            result = (result / (2 * info.Stress * info.JointEfficiency)) +(2 * 0.4f * info.DesignPressure);
+            result = result / ((2 * info.Stress * info.JointEfficiency) + (2 * 0.4f * info.DesignPressure));
             return result;
 
         }
